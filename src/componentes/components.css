@@ -1,0 +1,99 @@
+:root {
+  --main-color: #5c6cfc;
+  --dark-color: #2d304e;
+  --gray-color: #ededf1;
+  --green-color: #0ebc7d;
+}
+
+hr {
+  border-color: var(--main-color);
+}
+/* ------------------------------------------------------------- */
+.node_base {
+  background-color: var(--main-color);
+  border-radius: 10px;
+  min-width: 200px;
+  padding: 15px;
+}
+
+.node_variables {
+  color: var(--dark-color);
+  font-weight: bold;
+}
+.node_params {
+  background-color: #fff;
+  padding: 5px;
+  color: var(--dark-color);
+  border-radius: 5px;
+  margin: 15px 0 ;
+  font-weight: bold;
+}
+
+.node_var{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2px;
+  width: 100%;
+}
+.node_param{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.node_var div{
+  border-radius: 2px;
+  width: 50%;
+  text-align: center;
+  background-color: #fff;
+  margin: 0 2px;
+}
+
+.node_title {
+  border: 2px solid var(--main-color);
+  background-color: #fff;
+  border-radius: 5px;
+  color: var(--main-color);
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+/* ------------------------------------------------------------- */
+
+.object_base {
+  border-radius: 10px;
+  border: 2px solid var(--main-color);
+  min-width: 100px;
+  background-color: #fff;
+}
+.dict_base {
+  background-color: #fff;
+  border-radius: 10px;
+  min-width: 100px;
+  border: 2px solid var(--main-color);
+}
+
+.object_title {
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.objects_container{
+  padding: 0 10px;
+  text-align: center;
+}
+.dict_container{
+  text-align: center;
+   background-color: #fff;
+}
+
+.dict_param{
+  /* border: 1px solid var(--main-color); */
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+

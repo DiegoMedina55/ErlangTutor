@@ -2,6 +2,7 @@ import React from "react";
 import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
 import "beautiful-react-diagrams/styles.css";
 import "./App.css";
+import "antd/dist/antd.css";
 
 import CustomNode from "./componentes/customNode";
 import ListNode from "./componentes/listNode";
@@ -9,13 +10,16 @@ import DictNode from "./componentes/dictNode";
 
 import json from "./api/structure.json";
 
+import { Layout, Menu, Row, Col } from "antd";
+const { Header, Content, Footer } = Layout;
+
 const genObjNodes = (objsvars, objsdata, funname, funpos) => {
   const nodes = [];
   let i = 0;
   for (var objname in objsvars) {
     const data = objsdata[objsvars[objname]];
     const node = {
-      id: objname  + funname,
+      id: objname + funname,
       render: Array.isArray(data) ? ListNode : DictNode,
       disableDrag: false,
       data: {
@@ -66,13 +70,13 @@ const generateNodes = (step) => {
   return k;
 };
 
-const generateObjectLinks = (nodes,n) => {
+const generateObjectLinks = (nodes, n) => {
   const links = [];
   for (let i = 0; i < n; i++) {
     for (let key in nodes[i].data.objectVariables) {
       const link = {
-        input: nodes[i].id   ,
-        output: key + nodes[i].id ,
+        input: nodes[i].id,
+        output: key + nodes[i].id,
         readonly: true,
         label: key,
         className: "my-custom-link-class",
@@ -84,26 +88,26 @@ const generateObjectLinks = (nodes,n) => {
   return links;
 };
 
-const generateNodeLinks = (nodes,n) => {
+const generateNodeLinks = (nodes, n) => {
   let links = [];
   for (let i = 1; i < n; i++) {
     const link = {
-      input: nodes[i - 1].id ,
-      output: nodes[i].id ,
+      input: nodes[i - 1].id,
+      output: nodes[i].id,
       readonly: true,
       label: "Function called",
       className: "my-custom-link-class",
     };
     links.push(link);
   }
-  const ol = generateObjectLinks(nodes,n);
+  const ol = generateObjectLinks(nodes, n);
   links = [...links, ...ol];
   return links;
 };
 
 const nodes = generateNodes(json.steps[0]);
-const fnodes = json.steps[0].functions.length
-const nodesLinks = generateNodeLinks(nodes,fnodes);
+const fnodes = json.steps[0].functions.length;
+const nodesLinks = generateNodeLinks(nodes, fnodes);
 
 const initialSchema = createSchema({
   nodes: nodes,
@@ -121,11 +125,36 @@ const UncontrolledDiagram = () => {
 
 function App() {
   return (
-    <div c>
-      <div style={{ height: 600 }}>
-        <UncontrolledDiagram />
-      </div>
-    </div>
+    <Layout>
+      <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
+        <div className="logo" />
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+          <Menu.Item key="1">Nuevo</Menu.Item>
+        </Menu>
+      </Header>
+      <Row style={{display:"flex",justifyContent:"center"}}>
+        <Col span={18} push={5}>
+          <Content
+            className="site-layout"
+            style={{ padding: "0 15px", marginTop: 64 }}
+          >
+            <UncontrolledDiagram />
+          </Content>
+        </Col>
+        <Col span={5} pull={18}>
+          <Content
+            className="site-layout"
+            style={{ padding: "0 15px", marginTop: 64, }}
+          >
+            <UncontrolledDiagram />
+          </Content>
+        </Col>
+      </Row>
+
+      <Footer style={{ textAlign: "center" }}>
+        ErlangTutor | Programación Computadores 2020-2
+      </Footer>
+    </Layout>
   );
 }
 

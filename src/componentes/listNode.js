@@ -4,7 +4,6 @@ import "./components.css";
 const ListNode = (props) => {
   const { data, inputs,outputs } = props;
   const objectData = data.data;
-  console.log(objectData);
   return (
     <div className="object_base">
       <div className="object_title  ">{data.name}</div>

@@ -13,7 +13,7 @@ hr {
   background-color: var(--main-color);
   border-radius: 10px;
   min-width: 200px;
-  padding: 15px;
+  padding: 10px;
 }
 
 .node_variables {

@@ -1,48 +1,147 @@
 {
-  "principal_Functions": [{
+  "principal_Functions": [
+    {
       "name": "sum",
       "params": 2,
       "isExport": true
-  }],
-  "steps" : [{
-    "current_line": 1,
-    "next_line": 8,
-    "output": "result of io:writ",
-    "objects": {
-      "id1": ["values", "values"],
-      "id2": {
-        "namee":"value",
-        "lastname": "medina",
-        "age": 20
-      }
+    }
+  ],
+  "steps": [
+
+    {
+      "current_line": 1,
+      "next_line": 8,
+      "output": "result of io:writ",
+      "objects": {
+        "id1": ["values", "values"],
+        "id2": {
+          "namee": "value",
+          "lastname": "medina",
+          "age": 20
+        }
+      },
+      "functions": [
+        {
+          "name": "sum",
+          "params": { "p1": "value" },
+          "variables": {
+            "Name": "value"
+          },
+          "objectVariables": {
+            "list2": "id2"
+          },
+          "functionVariables": {
+            "f1": "sum2222"
+          },
+          "return": null
+        }
+      ]
     },
-    "functions": [{
-      "name": "sum",
-      "params": {"p1":"value"},
-      "variables": {
-        "Name": "value"
+        {
+      "current_line": 1,
+      "next_line": 8,
+      "output": "result of io:writ",
+      "objects": {
+        "id1": ["values", "values"],
+        "id2": {
+          "namee": "value",
+          "lastname": "medina",
+          "age": 20
+        }
       },
-      "objectVariables": {
-        "list": "id1",
-        "list2": "id2"
+      "functions": [
+        {
+          "name": "sum",
+          "params": { "p1": "value" },
+          "variables": {
+            "Name": "value"
+          },
+          "objectVariables": {
+            "list": "id1",
+            "list2": "id2"
+          },
+          "functionVariables": {
+            "f1": "sum"
+          },
+          "return": null
+        },
+        {
+          "name": "sum2",
+          "params": { "p1": "value" },
+          "variables": {
+            "Name": "value"
+          },
+          "objectVariables": {
+            "dic2": "id2"
+          },
+          "functionVariables": {
+            "f1": "sum"
+          },
+          "return": null
+        }
+      ]
+    },
+    {
+      "current_line": 1,
+      "next_line": 8,
+      "output": "result of io:writ",
+      "objects": {
+        "id1": ["values", "values"],
+        "id2": {
+          "namee": "value",
+          "lastname": "medina",
+          "age": 20
+        }
       },
-      "functionVariables": {
-        "f1": "sum"
-      },
-      "return": null
-    },{
-      "name": "sum2",
-      "params": { "p1": "value" },
-      "variables": {
-        "Name": "value"
-      },
-      "objectVariables": {
-        "dic2": "id2"
-      },
-      "functionVariables": {
-        "f1": "sum"
-      },
-      "return": null
-    }]
-  }]
+      "functions": [
+        {
+          "name": "sum",
+          "params": { "p1": "value" },
+          "variables": {
+            "Name": "value"
+          },
+          "objectVariables": {
+            "list": "id1",
+            "list2": "id2"
+          },
+          "functionVariables": {
+            "f1": "sum"
+          },
+          "return": null
+        },
+        {
+          "name": "sum2",
+          "params": { "p1": "value" },
+          "variables": {
+            "Name": "value"
+          },
+          "objectVariables": {
+            "dic2": "id2"
+          },
+          "functionVariables": {
+            "f1": "sum"
+          },
+          "return": null
+        },
+        {
+          "name": "sum3",
+          "params": { "p1": "value", "p2": "value", "p3": "valu3" },
+          "variables": {
+            "Name": "value"
+          },
+          "objectVariables": {
+            "list": "id1",
+            "list2": "id2",
+            "mydic": "id2",
+            "mydic2": "id2"
+          },
+          "functionVariables": {
+            "f1": "sum"
+          },
+          "return": null
+        }
+      ]
+    }
+    
+  ]
 }

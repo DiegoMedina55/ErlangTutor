@@ -52,7 +52,7 @@ const CodeScreen = (props) => {
         className="site-layout"
         style={{ padding: "0 400px", marginTop: 64 }}
       >
-        <div className="site-layout-background" style={{ padding: 24 }}>
+        <div className="layout-background" style={{ padding: 24 }}>
           <h2>
             Bienvenido a Erlang Tutor, ingrese el código que quiere visualizar
           </h2>

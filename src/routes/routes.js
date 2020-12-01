@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Routes, Switch, Route } from "react-router-dom";
 import CodeScreen from "../views/codeScreen";
-import DiagramScreen from "../views/diagramScreen";
+import DiagramScreen from "../views/diagram/diagramScreen";
 
 
 const routes = () => {

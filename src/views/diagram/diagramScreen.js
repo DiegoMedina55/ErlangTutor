@@ -97,9 +97,16 @@ const DiagramScreen = (props) => {
           </Menu.Item>
         </Menu>
       </Header>
-      <div className="site-layout-background">
+      <div
+        className="site-layout-background"
+        style={{ backgroundColor: "#dadada" }}
+      >
         <Row>
-          <Col span={5} className="site-layout">
+          <Col
+            span={5}
+            className="site-layout"
+            style={{ backgroundColor: "#dadada" }}
+          >
             <Content
               style={{ padding: "0 15px", marginTop: 64, height: "100%" }}
             >
@@ -113,7 +120,7 @@ const DiagramScreen = (props) => {
                 key={`diagram ${currentStep}`}
                 step={json.steps[currentStep]}
               />
-              <div style={{display:"flex",justifyContent:"center"}}>
+              <div style={{ display: "flex", justifyContent: "center" }}>
                 <Button
                   type="primary"
                   onClick={onBeforeClick}

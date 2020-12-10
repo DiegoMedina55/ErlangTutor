@@ -1,7 +1,7 @@
 :root {
   --main-color: #5C6CFC;
   --dark-color: #2D304E;
-  --gray-color: #EDEDF1;
+  --gray-color: #dadada;
   --green-color:#0EBC7D;
 }
 
@@ -18,10 +18,10 @@
 }
 .site-layout-backgroundd {
   background-color: var(--gray-color);
-  background-color: #fff;
+  background-color: blue;
     height: 100vh;
 }
-[data-theme="dark"] .site-layout .site-layout-background {
+[data-theme="dark"] .site-layout  {
   background: #141414;
 }
 

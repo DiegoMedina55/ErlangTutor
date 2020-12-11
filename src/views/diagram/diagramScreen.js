@@ -1,4 +1,4 @@
-import React, { useContext ,useState,useEffect  } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
@@ -9,158 +9,158 @@ import { UncontrolledDiagram } from "./diagramLogic";
 
 import json from "../../api/structure.json";
 import "./diagramScreen.css";
-import { stepsContext } from "../../context/stepsContext";
-import Output from "./components/output"
-import Code from "./components/code"
+import { sourceCodeContext, responseContext } from "../../context/stepsContext";
+import Output from "./components/output";
+import Code from "./components/code";
 import DiagramDrawer from "./components/drawer";
 
 const { Header, Content, Footer } = Layout;
 
-let code = `juan
-diego
-medina
-naranjo
-diego
-medina
-naranjo
-diego
-medina
-naranjo
-`;
-let output = `juan
-diego
-medina
-naranjo
-diego
-medina
-naranjo
-diego
-medina
-naranjo
-`;
-code = code.split("\n");
-output = output.split("\n");
-
-
-const DiagramScreen = (props) => {
-
+const DiagramScreen = () => {
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
 
-  let currentLine = 2;
-  const [currentStep,setCurrentStep] = useState(0);
-  const history = useHistory();
-  const { steps, setSteps } = useContext(stepsContext);
-  console.log(json);
-  
-  const returnCode = () => {
-    history.replace("/code")
-  }
-
+  const { response } = useContext(responseContext);
+  const { code } = useContext(sourceCodeContext);
+  const steps = response;
+  const [currentStep, setCurrentStep] = useState(0);
+  const [currentLine, setCurrentLine] = useState(
+    steps.steps[0].current_line
+  );
+  const [consoleOutput, setConsoleOutput] = useState([
+    steps.steps[0].output,
+  ]);
   const [visible, setVisible] = useState(false);
-  const showDrawer = () => {
-    setVisible(true);
-  };
-  const onClose = () => {
-    setVisible(false);
-  };
+
+  const history = useHistory();
+  const returnCode = () => history.replace("/code");
+
+  const showDrawer = () => setVisible(true);
+  const onClose = () => setVisible(false);
 
   const onNextClick = () => {
-    if (currentStep < json.steps.length-1) {
+    if (currentStep < response.steps.length - 1) {
+      const cs = currentStep + 1;
+      if (steps.steps[cs].output != null) {
+        let x = consoleOutput;
+        x.push(steps.steps[cs].output);
+        setConsoleOutput(x);
+      }
       setCurrentStep(currentStep + 1);
+      setCurrentLine(steps.steps[cs].current_line);
       forceUpdate();
     }
-  }
+  };
+
   const onBeforeClick = () => {
     if (currentStep > 0) {
+      const cs = currentStep - 1;
+      if (steps.steps[cs].output != null) {
+        let x = consoleOutput;
+        x.pop();
+        setConsoleOutput(x);
+      }
       setCurrentStep(currentStep - 1);
+      setCurrentLine(steps.steps[cs].current_line);
       forceUpdate();
     }
-  }
+  };
 
   return (
-    <Layout className="layout">
-      <Header
-        style={{
-          position: "fixed",
-          zIndex: 1,
-          width: "100%",
-        }}
-      >
-        <div className="logo" />
-        <Menu theme="dark" mode="horizontal">
-          <Menu.Item key="1" onClick={returnCode}>
-            Nuevo código
-          </Menu.Item>
-          <Menu.Item key="2" onClick={showDrawer}>
-            Información Adicional
-          </Menu.Item>
-        </Menu>
-      </Header>
-      <div
-        className="site-layout-background"
-        style={{ backgroundColor: "#dadada" }}
-      >
-        <Row>
-          <Col
-            span={5}
-            className="site-layout"
-            style={{ backgroundColor: "#dadada" }}
-          >
-            <Content
-              style={{ padding: "0 15px", marginTop: 64, height: "100%" }}
+    <>
+      <Layout className="layout">
+        <Header
+          style={{
+            position: "fixed",
+            zIndex: 1,
+            width: "100%",
+          }}
+        >
+          <div className="logo" />
+          <Menu theme="dark" mode="horizontal">
+            <Menu.Item key="1" onClick={returnCode}>
+              Nuevo código
+            </Menu.Item>
+            <Menu.Item key="2" onClick={showDrawer}>
+              Información Adicional
+            </Menu.Item>
+          </Menu>
+        </Header>
+        <div
+          className="site-layout-background"
+          style={{ backgroundColor: "#dadada" }}
+        >
+          <Row>
+            <Col
+              span={5}
+              className="site-layout"
+              style={{ backgroundColor: "#dadada" }}
             >
-              {<Code code={code} />}
-              {<Output output={output} currentLine={currentLine} />}
-            </Content>
-          </Col>
-          <Col span={19}>
-            <Content style={{ paddingLeft: "25px", marginTop: 64 }}>
-              <UncontrolledDiagram
-                key={`diagram ${currentStep}`}
-                step={json.steps[currentStep]}
-              />
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Button
-                  type="primary"
-                  onClick={onBeforeClick}
+              <Content
+                style={{ padding: "0 15px", marginTop: 64, height: "100%" }}
+              >
+                {<Code code={code} current={currentLine} />}
+                {<Output output={consoleOutput} />}
+                <div
                   style={{
-                    backgroundColor: "#5C6CFC",
-                    border: "none",
-                    margin: "5px 10px",
+                    display: "flex",
+                    justifyContent: "center",
+                    margin: 10,
                   }}
                 >
-                  Anterior
-                </Button>
-                <Button
-                  type="primary"
-                  onClick={onNextClick}
-                  style={{
-                    backgroundColor: "#5C6CFC",
-                    border: "none",
-                    margin: "5px 10px",
-                  }}
-                >
-                  Siguiente
-                </Button>
-              </div>
-            </Content>
-          </Col>
-        </Row>
-      </div>
-      <DiagramDrawer onClose={onClose} visible={visible} />
-      <Footer
-        className="footer"
-        style={{
-          backgroundColor: "#2D304E",
-          color: "#fff",
-          fontWeight: "bold",
-          textAlign: "center",
-        }}
-      >
-        ErlangTutor | Lenguajes de programación 2020-2
-      </Footer>
-    </Layout>
+                  <Button
+                    type="primary"
+                    onClick={onBeforeClick}
+                    style={{
+                      backgroundColor: "#5C6CFC",
+                      border: "none",
+                      margin: "5px 10px",
+                    }}
+                  >
+                    Anterior
+                  </Button>
+                  <Button
+                    type="primary"
+                    onClick={onNextClick}
+                    style={{
+                      backgroundColor: "#5C6CFC",
+                      border: "none",
+                      margin: "5px 10px",
+                    }}
+                  >
+                    Siguiente
+                  </Button>
+                </div>
+              </Content>
+            </Col>
+            <Col span={19}>
+              <Content style={{ paddingLeft: "25px", marginTop: 64 }}>
+                <UncontrolledDiagram
+                  key={`diagram ${currentStep}`}
+                  step={response.steps[currentStep]}
+                />
+              </Content>
+            </Col>
+          </Row>
+        </div>
+        <Footer
+          className="footer"
+          style={{
+            backgroundColor: "#2D304E",
+            color: "#fff",
+            fontWeight: "bold",
+            textAlign: "center",
+          }}
+        >
+          ErlangTutor | Lenguajes de programación 2020-2
+        </Footer>
+      </Layout>
+      <DiagramDrawer
+        onClose={onClose}
+        visible={visible}
+        functions={response.principal_Functions}
+      />
+    </>
   );
 };
 

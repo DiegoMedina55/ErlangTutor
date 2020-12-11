@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
 
-export const stepsContext = createContext(null);
+export const responseContext = createContext(null);
+export const sourceCodeContext = createContext(null);
 

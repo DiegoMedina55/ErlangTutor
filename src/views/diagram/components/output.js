@@ -7,7 +7,7 @@ const Output = (props) => {
       <h2>Output</h2>
       <div
         style={{
-          height: "20vh",
+          height: "10vh",
           overflow: "auto",
           padding: "5px",
           backgroundColor: "#fff",

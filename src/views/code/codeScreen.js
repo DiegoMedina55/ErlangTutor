@@ -1,18 +1,32 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { getSteps } from "../api/api";
-import { stepsContext } from "../context/stepsContext";
+import { getSteps } from "../../api/api";
+import { responseContext, sourceCodeContext } from "../../context/stepsContext";
 import "./codeScreen.css";
 
-import { Layout, Input, Button } from "antd";
+import { Layout, Input, Button, notification } from "antd";
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 const { Header, Content, Footer } = Layout;
 const { TextArea } = Input;
 
 const CodeScreen = (props) => {
   const history = useHistory();
-  const { steps, setSteps } = useContext(stepsContext);
+  const { response, setResponse } = useContext(responseContext);
+  const { code, setCode } = useContext(sourceCodeContext);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const Context = React.createContext({ name: "Mensaje de error" });
+  const [api, contextHolder] = notification.useNotification();
+  const openNotification = (placement, error) => {
+    // const s = ;
+    notification.open({
+      message: "Hay un error con tu codigo",
+      description: `Linea ${error.line} Columna ${error.column}. ${error.message}`,
+      icon: <ExclamationCircleOutlined  style={{ color: "#108ee9" }} />,
+      // placement,
+    });
+  };
 
   const onChange = ({ target: { value } }) => {
     setInputValue(value);
@@ -29,11 +43,17 @@ const CodeScreen = (props) => {
   };
 
   const makeRequest = async (codeData) => {
-    const s = await getSteps(codeData);
-    setSteps(s);
-    setIsLoading(false);
-    setInputValue("");
-    history.push("/diagram");
+    const res = await getSteps(codeData);
+    if (res.error === null) {
+      setResponse(res.response);
+      setCode(inputValue.split("\n"));
+      setIsLoading(false);
+      setInputValue("");
+      history.push("/diagram");
+    } else {
+      openNotification("topRight", res.response);
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -50,7 +70,7 @@ const CodeScreen = (props) => {
       </Header>
       <Content
         className="site-layout"
-        style={{ padding: "0 400px", marginTop: 64 }}
+        style={{ padding: "0 20%", marginTop: 64 }}
       >
         <div className="layout-background" style={{ padding: 24 }}>
           <h2>

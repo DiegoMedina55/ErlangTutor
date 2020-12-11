@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Routes, Switch, Route } from "react-router-dom";
-import CodeScreen from "../views/codeScreen";
+import CodeScreen from "../views/code/codeScreen";
 import DiagramScreen from "../views/diagram/diagramScreen";
 
 

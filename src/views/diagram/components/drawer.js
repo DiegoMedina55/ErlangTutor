@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Drawer, Button } from "antd";
 
 const DiagramDrawer = (props) => {
-  const { onClose,visible } = props
-  
+  const { onClose, visible, functions } = props;
+
   return (
     <>
       <Drawer
@@ -16,26 +16,30 @@ const DiagramDrawer = (props) => {
       >
         <div>
           <div>
-
-          <h1>Exports</h1>
+            <h1>Exports</h1>
           </div>
-          <h4>Funcion6</h4>
-          <h4>Funcion4</h4>
-          <h4>Funcion4</h4>
-          <h4>Funcion3</h4>
-          <h4>Funcion2</h4>
+          {functions.map((f) => {
+            if (f.isExport) {
+              return (
+                <h4>
+                  {f.name} / {f.params}
+                </h4>
+              );
+            }
+          })}
         </div>
         <div>
           <div>
-          <h1>Funciones disponibles</h1>
+            <h1>Funciones disponibles</h1>
           </div>
-          <h4>Funcion6</h4>
-          <h4>Funcion4</h4>
-          <h4>Funcion4</h4>
-          <h4>Funcion3</h4>
-          <h4>Funcion2</h4>
+          {functions.map((f) => {
+            return (
+              <h4>
+                {f.name} / {f.params}
+              </h4>
+            );
+          })}
         </div>
-
       </Drawer>
     </>
   );

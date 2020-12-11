@@ -8,9 +8,9 @@ const Code = (props) => {
       <h2>Tu código</h2>
       <div
         style={{
-          height: "50vh",
+          height: "60vh",
           backgroundColor: "#fff",
-          padding: "5px",
+          padding: "2px",
           borderRadius: "10px",
           overflow: "auto",
         }}
@@ -20,7 +20,7 @@ const Code = (props) => {
             line += 1;
             return (
               <>
-                <div style={{ padding: "0 30px" }}>
+                <div style={{ padding: "0 30px" }} >
                   <h4 style={{ margin: 0 }}>
                     {current === line && (
                       <strong

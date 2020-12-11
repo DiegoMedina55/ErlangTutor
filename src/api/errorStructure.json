@@ -1,5 +1,8 @@
 {
-  "errorMessage": "sintactic: asdf",
-  "linea": 1,
-  "columna": 4
+  "error": true,
+  "response":{
+    "message": "sintactic: asdf",
+    "line": 1,
+    "column": 4
+  }
 }

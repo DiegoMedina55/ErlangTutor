@@ -3,7 +3,7 @@ import ListNode from "../../componentes/listNode";
 import DictNode from "../../componentes/dictNode";
 import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
 
- const genObjNodes = (objsvars, objsdata, funname, funpos) => {
+ const genObjNodes = (objsvars, objsdata, funname, funpos) => { 
   const nodes = [];
   let i = 0;
   for (var objname in objsvars) {
@@ -36,8 +36,12 @@ import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
       id: sf[i].name,
       render: CustomNode,
       disableDrag: false,
-      data: sf[i],
-      coordinates: [275 * i , 25],
+      data: {
+        function:sf[i],
+        active: i===sf.length-1 ? true : false
+      },
+        
+      coordinates: [ 275 * i , 25],
       outputs: [],
       inputs: [],
     };
@@ -69,7 +73,7 @@ import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
  const generateObjectLinks = (nodes, n) => {
   const links = [];
   for (let i = 0; i < n; i++) {
-    for (let key in nodes[i].data.objectVariables) {
+    for (let key in nodes[i].data.function.objectVariables) {
       const link = {
         input: nodes[i].id,
         output: key + nodes[i].id,
@@ -90,7 +94,7 @@ import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
       input: nodes[i - 1].id,
       output: nodes[i].id,
       readonly: true,
-      label: "FC",
+      label: "fc",
       className: "my-custom-link-class",
     };
     links.push(link);
@@ -119,8 +123,8 @@ export const UncontrolledDiagram = ({step}) => {
   const initialSchema = generateSchema(step)
   const [schema, { onChange }] = useSchema(initialSchema);
   return (
-    <div style={{ height: "80vh", width: "100%", padding: "50px 20px 0" }}>
-      <Diagram schema={schema} onChange={onChange} />
+    <div style={{ height: "85vh", width: "100%"}}>
+      <Diagram schema={schema} onChange={onChange} style={{overflow:"overlay"}} />
     </div>
   );
 };

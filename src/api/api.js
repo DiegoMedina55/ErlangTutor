@@ -1,4 +1,5 @@
 import json from "./structure.json"
+// import jsonError from "./errorStructure.json"
 
 const axios = require("axios");
 const endpoint = "127.0.0.1"

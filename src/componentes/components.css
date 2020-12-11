@@ -16,6 +16,10 @@ hr {
   padding: 10px;
 }
 
+.active_node{
+  border: 6px solid var(--green-color)
+}
+
 .node_variables {
   color: var(--dark-color);
   font-weight: bold;
@@ -55,6 +59,16 @@ hr {
   border-radius: 5px;
   color: var(--main-color);
   padding: 10px;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+.node_return {
+  /* border: 2px solid var(--green-color); */
+  background-color: #fff;
+  border-radius: 5px;
+  color: var(--green-color);
+  padding: 5px;
   font-weight: bold;
   text-align: center;
 }

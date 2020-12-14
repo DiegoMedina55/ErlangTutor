@@ -1,22 +1,143 @@
 {
   "error": false,
   "response": {
+    "principalFunctions": [
+      { "name": "comparingAtoms", "params": 0, "isExport": false },
+      { "name": "comparingNumbers", "params": 2, "isExport": true },
+      { "name": "comparingStrings", "params": 0, "isExport": true },
+      { "name": "sum", "params": 2, "isExport": false },
+      { "name": "start", "params": 0, "isExport": true }
+    ],
     "steps": [
       {
-        "currentLine": 3,
-        "output": "Paso inicial",
+        "currentLine": 25,
+        "nextLine": 25,
+        "output": "",
         "functions": [
           {
             "name": "start",
             "params": {},
             "variables": {},
             "objectVariales": {},
-            "returnValue": "Paso inicial"
+            "returnValue": ""
           }
         ]
       },
       {
-        "currentLine": 4,
+        "currentLine": 25,
+        "nextLine": 26,
+        "output": "13.0",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 26,
+        "nextLine": 26,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 26,
+        "nextLine": 27,
+        "output": "7.0",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 27,
+        "nextLine": 27,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 27,
+        "nextLine": 28,
+        "output": "30.0",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 28,
+        "nextLine": 28,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 28,
+        "nextLine": 29,
+        "output": "3.3333333333333335",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 29,
+        "nextLine": 7,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 7,
+        "nextLine": 8,
         "functions": [
           {
             "name": "start",
@@ -25,41 +146,423 @@
             "objectVariales": {}
           },
           {
-            "name": "sum",
-            "params": { "A": "1.0", "B": "2.0" },
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
             "variables": {},
             "objectVariales": {}
-          }
-        ]
-      },
-      {
-        "currentLine": 4,
-        "functions": [
-          {
-            "name": "start",
-            "params": {},
-            "variables": {},
-            "objectVariales": {}
-          },
-          {
-            "name": "sum",
-            "params": { "A": "1.0", "B": "2.0" },
-            "variables": {},
-            "objectVariales": {},
-            "returnValue": "3.0"
           }
         ]
       },
       {
         "currentLine": 8,
-        "output": "3.0",
+        "nextLine": 9,
+        "output": "10.0",
         "functions": [
           {
             "name": "start",
             "params": {},
             "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
             "objectVariales": {},
-            "returnValue": "null"
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 9,
+        "nextLine": 9,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 9,
+        "nextLine": 10,
+        "output": "true",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 10,
+        "nextLine": 10,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 10,
+        "nextLine": 11,
+        "output": "true",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 11,
+        "nextLine": 11,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 11,
+        "nextLine": 12,
+        "output": "true",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 12,
+        "nextLine": 12,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 12,
+        "nextLine": 13,
+        "output": "true",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 13,
+        "nextLine": 13,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 13,
+        "nextLine": 14,
+        "output": "true",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 14,
+        "nextLine": 14,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 14,
+        "nextLine": 7,
+        "output": "false",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 7,
+        "nextLine": 31,
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
+            "name": "comparingNumbers",
+            "params": { "X": "100.0", "I": "3.0" },
+            "variables": { "A": "10.0" },
+            "objectVariales": {},
+            "returnValue": "false"
+          }
+        ]
+      },
+      {
+        "currentLine": 31,
+        "nextLine": 21,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 21,
+        "nextLine": 21,
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "" },
+            "objectVariales": {}
+          },
+          {
+            "name": "sum",
+            "params": { "A": "3.0", "B": "4.0" },
+            "variables": {},
+            "objectVariales": {}
+          }
+        ]
+      },
+      {
+        "currentLine": 21,
+        "nextLine": 31,
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "" },
+            "objectVariales": {}
+          },
+          {
+            "name": "sum",
+            "params": { "A": "3.0", "B": "4.0" },
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": "7.0"
+          }
+        ]
+      },
+      {
+        "currentLine": 31,
+        "nextLine": 32,
+        "output": "7.0",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "7.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 32,
+        "nextLine": 32,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "7.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 32,
+        "nextLine": 33,
+        "output": "7.0",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "7.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 33,
+        "nextLine": 33,
+        "output": "",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "7.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 33,
+        "nextLine": 1,
+        "output": "1.0",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "7.0" },
+            "objectVariales": {},
+            "returnValue": ""
+          }
+        ]
+      },
+      {
+        "currentLine": 1,
+        "output": "Paso inicial",
+        "functions": [
+          {
+            "name": "start",
+            "params": {},
+            "variables": { "X": "7.0" },
+            "objectVariales": {},
+            "returnValue": "1.0"
           }
         ]
       }

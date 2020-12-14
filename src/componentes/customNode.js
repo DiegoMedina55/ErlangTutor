@@ -8,12 +8,15 @@ const CustomNode = (props) => {
   const vars = data.function.variables || {};
   const objectVariables = data.function.objectVariables || {};
   const objectsData = data.function.objects || {};
-  const objectReturn = data.function.returnValue || {};
+  const objectReturn = data.function.returnValue || "";
   return (
     <>
       <div className={`node_base ${data.active ? "active_node" : ""}`}>
         <div className="node_title  ">{data.function.name}</div>
         <div className="node_params">
+          <div style={{ backgroundColor: "#fff", borderRadius: "5px" }}>
+            <h4 style={{ textAlign: "center", color: "5c6cfc" }}>Parametros</h4>
+          </div>
           {Object.keys(params).map((k, v) => (
             <div className="node_param">
               <div>{k}</div>
@@ -21,7 +24,10 @@ const CustomNode = (props) => {
             </div>
           ))}
         </div>
-        <div className="node_variables">
+        <div className={`node_variables`}>
+          <div style={{ backgroundColor: "#fff", borderRadius: "5px" }}>
+            <h4 style={{ textAlign: "center", color: "5c6cfc" }}>Variables</h4>
+          </div>
           {Object.keys(vars).map((k, v) => (
             <div className="node_var">
               <div>{k}</div>
@@ -59,7 +65,7 @@ const CustomNode = (props) => {
             })
           )}
         </div>
-        {objectReturn !== null && (
+        {objectReturn !== "" && (
           <div className="node_return">{objectReturn}</div>
         )}
       </div>

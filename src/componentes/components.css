@@ -24,6 +24,12 @@ hr {
   color: var(--dark-color);
   font-weight: bold;
 }
+
+._white{
+  background-color: #fff;
+  border-radius: 5px;
+}
+
 .node_params {
   background-color: #fff;
   padding: 5px;

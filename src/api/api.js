@@ -9,24 +9,22 @@ let sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 export const getSteps = async (codeData) => {
   try {
 
-    await sleep(2000);
-    console.log(codeData)
+    // console.log(codeData)
     const data = await axios({
       method: "post",
       url: endpoint,
-      headers: {},
+      headers: { 
+        'Authorization': 'Basic xxxxxxxxxxxxxxxxxxx',
+        'Content-Type' : 'text/plain' 
+      },
       data: codeData,
     });
+    await sleep(2000);
+    console.log(data.data)
+    return data.data;
     // const data = json;
-    console.log(data)
-    return data;
+    // return data
   } catch (error) {
     console.log(error)
-    // throw new Error(
-    //   JSON.stringify({
-    //     message: error.response.data,
-    //     status: error.response.status,
-    //   })
-    // );
   }
 };

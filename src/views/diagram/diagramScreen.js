@@ -25,7 +25,7 @@ const DiagramScreen = () => {
   const steps = response;
   const [currentStep, setCurrentStep] = useState(0);
   const [currentLine, setCurrentLine] = useState(
-    steps.steps[0].current_line
+    steps.steps[0].currentLine
   );
   const [consoleOutput, setConsoleOutput] = useState([
     steps.steps[0].output,
@@ -47,7 +47,7 @@ const DiagramScreen = () => {
         setConsoleOutput(x);
       }
       setCurrentStep(currentStep + 1);
-      setCurrentLine(steps.steps[cs].current_line);
+      setCurrentLine(steps.steps[cs].currentLine);
       forceUpdate();
     }
   };
@@ -61,7 +61,7 @@ const DiagramScreen = () => {
         setConsoleOutput(x);
       }
       setCurrentStep(currentStep - 1);
-      setCurrentLine(steps.steps[cs].current_line);
+      setCurrentLine(steps.steps[cs].currentLine);
       forceUpdate();
     }
   };
@@ -158,7 +158,7 @@ const DiagramScreen = () => {
       <DiagramDrawer
         onClose={onClose}
         visible={visible}
-        functions={response.principal_Functions}
+        functions={response.principalFunctions || []}
       />
     </>
   );

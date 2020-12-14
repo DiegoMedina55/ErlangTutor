@@ -36,6 +36,15 @@ const CodeScreen = (props) => {
   const onStartClick = () => {
     setIsLoading(true);
     makeRequest(inputValue);
+//     makeRequest(`
+// % -export(start/0).
+
+// sum (0, B) -> B;
+// sum (A, B) -> A + B.
+// sum (A, B, C) -> A + B + C.
+// start()->
+// io:fwrite(sum(1, 2)).
+//     `);
   };
 
   const onRestartClick = () => {
@@ -53,7 +62,7 @@ const CodeScreen = (props) => {
       setInputValue("");
       history.push("/diagram");
     } else {
-      openNotification("topRight", res.response);
+      openNotification("topRight", res.response.errorMessage);
       setIsLoading(false);
     }
   };

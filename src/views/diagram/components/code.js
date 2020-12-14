@@ -21,7 +21,7 @@ const Code = (props) => {
             return (
               <>
                 <div style={{ padding: "0 30px" }} >
-                  <h4 style={{ margin: 0 }}>
+                  <h5 style={{ margin: 0 }}>
                     {current === line && (
                       <strong
                         style={{
@@ -42,7 +42,7 @@ const Code = (props) => {
                       </strong>
                     )}
                     {l}
-                  </h4>
+                  </h5>
                 </div>
               </>
             );

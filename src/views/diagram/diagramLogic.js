@@ -3,20 +3,22 @@ import ListNode from "../../componentes/listNode";
 import DictNode from "../../componentes/dictNode";
 import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
 
+
+
  const genObjNodes = (objsvars, objsdata, funname, funpos) => { 
   const nodes = [];
   let i = 0;
   for (var objname in objsvars) {
     const data = objsdata[objsvars[objname]];
     const node = {
-      id: objname + funname,
+      id: objname + funname ,
       render: Array.isArray(data) ? ListNode : DictNode,
       disableDrag: false,
       data: {
         name: objname,
         data: data,
       },
-      coordinates: [funpos + (100 * i ), 400],
+      coordinates: [funpos + 100 * i, 500],
       inputs: [{ id: objname + funname + "iport", alignment: "left" }],
       outputs: [],
     };
@@ -32,8 +34,14 @@ import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
   let objNodes = [];
   const sf = step.functions;
   for (let i = 0; i < sf.length; i++) {
+    const r = sf[i].name + Math.random();
+    const X = i % 6;
+    let Y = 125;
+    if (i%6 ==0 && i !=0){
+      Y= Y +200;
+    }
     const node = {
-      id: sf[i].name,
+      id: r,
       render: CustomNode,
       disableDrag: false,
       data: {
@@ -41,15 +49,15 @@ import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
         active: i===sf.length-1 ? true : false
       },
         
-      coordinates: [ 275 * i , 25],
+      coordinates: [ 275 * X , Y],
       outputs: [],
       inputs: [],
     };
     if (i > 0) {
-      node.inputs.push({ id: sf[i].name + "iport", alignment: "left" });
+      node.inputs.push({ id: r + "iport" , alignment: "left" });
     }
     if (i < sf.length - 1) {
-      node.outputs.push({ id: sf[i].name + "oport", alignment: "right" });
+      node.outputs.push({ id: r + "oport" , alignment: "right" });
     }
     for (let key in sf[i].objectVariables) {
       node.outputs.push({
@@ -91,8 +99,8 @@ import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
   let links = [];
   for (let i = 1; i < n; i++) {
     const link = {
-      input: nodes[i - 1].id,
-      output: nodes[i].id,
+      input: nodes[i - 1].id ,
+      output: nodes[i].id ,
       readonly: true,
       label: "fc",
       className: "my-custom-link-class",

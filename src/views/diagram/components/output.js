@@ -14,7 +14,7 @@ const Output = (props) => {
           borderRadius: "10px",
         }}
       >
-        <div>
+        <div id="outputID">
           {output.map((o) => {
             return (
               <div style={{ padding: "0 30px" }}>

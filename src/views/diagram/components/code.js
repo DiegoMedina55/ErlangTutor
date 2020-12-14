@@ -2,7 +2,7 @@ import React from "react";
 
 const Code = (props) => {
     let line = 0;
-  const { code, current } = props;
+  const { code, current,next } = props;
   return (
     <>
       <h2>Tu código</h2>
@@ -20,9 +20,9 @@ const Code = (props) => {
             line += 1;
             return (
               <>
-                <div style={{ padding: "0 30px" }} >
-                  <h5 style={{ margin: 0 }}>
-                    {current === line && (
+                <div style={{ padding: "0 30px" }}>
+                  <h3 style={{ margin: 0 }}>
+                    {current === line && current !== next && (
                       <strong
                         style={{
                           paddingRight: "10px",
@@ -32,7 +32,27 @@ const Code = (props) => {
                         {line}
                       </strong>
                     )}
-                    {current !== line && (
+                    {next === line && current !== next && (
+                      <strong
+                        style={{
+                          paddingRight: "10px",
+                          color: "#18DBAC",
+                        }}
+                      >
+                        {line}
+                      </strong>
+                    )}
+                    {current === next && current === line && (
+                      <strong
+                        style={{
+                          paddingRight: "10px",
+                          color: "red",
+                        }}
+                      >
+                        {line}
+                      </strong>
+                    )}
+                    {current !== line && next !== line && (
                       <strong
                         style={{
                           paddingRight: "10px",
@@ -42,7 +62,7 @@ const Code = (props) => {
                       </strong>
                     )}
                     {l}
-                  </h5>
+                  </h3>
                 </div>
               </>
             );

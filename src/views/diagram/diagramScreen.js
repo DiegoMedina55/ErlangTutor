@@ -27,6 +27,9 @@ const DiagramScreen = () => {
   const [currentLine, setCurrentLine] = useState(
     steps.steps[0].currentLine
   );
+  const [nextLine, setNextLine] = useState(
+    steps.steps[0].nextLine
+  );
   const [consoleOutput, setConsoleOutput] = useState([
     steps.steps[0].output,
   ]);
@@ -48,6 +51,7 @@ const DiagramScreen = () => {
       }
       setCurrentStep(currentStep + 1);
       setCurrentLine(steps.steps[cs].currentLine);
+      setNextLine(steps.steps[cs].nextLine);
       forceUpdate();
     }
   };
@@ -62,6 +66,7 @@ const DiagramScreen = () => {
       }
       setCurrentStep(currentStep - 1);
       setCurrentLine(steps.steps[cs].currentLine);
+      setNextLine(steps.steps[cs].nextLine);
       forceUpdate();
     }
   };
@@ -76,7 +81,7 @@ const DiagramScreen = () => {
             width: "100%",
           }}
         >
-          <div className="logo" />
+          {/* <div className="logo" /> */}
           <Menu theme="dark" mode="horizontal">
             <Menu.Item key="1" onClick={returnCode}>
               Nuevo código
@@ -99,7 +104,7 @@ const DiagramScreen = () => {
               <Content
                 style={{ padding: "0 15px", marginTop: 64, height: "100%" }}
               >
-                {<Code code={code} current={currentLine} />}
+                {<Code code={code} current={currentLine} next={nextLine} />}
                 {<Output output={consoleOutput} />}
                 <div
                   style={{

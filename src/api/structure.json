@@ -138,6 +138,7 @@
       {
         "currentLine": 7,
         "nextLine": 8,
+        "output": "",
         "functions": [
           {
             "name": "start",
@@ -149,14 +150,15 @@
             "name": "comparingNumbers",
             "params": { "X": "100.0", "I": "3.0" },
             "variables": {},
-            "objectVariales": {}
+            "objectVariales": {},
+            "returnValue": ""
           }
         ]
       },
       {
         "currentLine": 8,
         "nextLine": 9,
-        "output": "10.0",
+        "output": "",
         "functions": [
           {
             "name": "start",
@@ -416,6 +418,7 @@
       {
         "currentLine": 7,
         "nextLine": 31,
+        "output": "",
         "functions": [
           {
             "name": "start",
@@ -449,6 +452,7 @@
       {
         "currentLine": 21,
         "nextLine": 21,
+        "output": "",
         "functions": [
           {
             "name": "start",
@@ -460,13 +464,15 @@
             "name": "sum",
             "params": { "A": "3.0", "B": "4.0" },
             "variables": {},
-            "objectVariales": {}
+            "objectVariales": {},
+            "returnValue": ""
           }
         ]
       },
       {
         "currentLine": 21,
         "nextLine": 31,
+        "output": "",
         "functions": [
           {
             "name": "start",
@@ -486,7 +492,7 @@
       {
         "currentLine": 31,
         "nextLine": 32,
-        "output": "7.0",
+        "output": "",
         "functions": [
           {
             "name": "start",

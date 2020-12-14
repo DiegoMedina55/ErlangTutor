@@ -21,9 +21,9 @@ const DiagramDrawer = (props) => {
           {functions.map((f) => {
             if (f.isExport) {
               return (
-                <h4>
+                <h3>
                   {f.name} / {f.params}
-                </h4>
+                </h3>
               );
             }
           })}
@@ -34,9 +34,9 @@ const DiagramDrawer = (props) => {
           </div>
           {functions.map((f) => {
             return (
-              <h4>
+              <h3>
                 {f.name} / {f.params}
-              </h4>
+              </h3>
             );
           })}
         </div>

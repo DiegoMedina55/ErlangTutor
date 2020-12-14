@@ -9,7 +9,7 @@ let sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 export const getSteps = async (codeData) => {
   try {
 
-    // console.log(codeData)
+    console.log(codeData)
     const data = await axios({
       method: "post",
       url: endpoint,

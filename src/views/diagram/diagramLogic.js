@@ -36,7 +36,7 @@ import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
   for (let i = 0; i < sf.length; i++) {
     const r = sf[i].name + Math.random();
     const X = i % 6;
-    let Y = 125;
+    let Y = 150;
     if (i%6 ==0 && i !=0){
       Y= Y +200;
     }
@@ -49,7 +49,7 @@ import Diagram, { useSchema, createSchema } from "beautiful-react-diagrams";
         active: i===sf.length-1 ? true : false
       },
         
-      coordinates: [ 275 * X , Y],
+      coordinates: [ 275 * X +20, Y],
       outputs: [],
       inputs: [],
     };

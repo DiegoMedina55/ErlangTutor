@@ -3,12 +3,12 @@ import "./components.css";
 
 const CustomNode = (props) => {
   const { inputs, outputs, data } = props;
-  const params = data.function.params;
-  const functionVars = data.function.functionVariables;
-  const vars = data.function.variables;
-  const objectVariables = data.function.objectVariables;
-  const objectsData = data.function.objects;
-  const objectReturn = data.function.return;
+  const params = data.function.params || {};
+  const functionVars = data.function.functionVariables || {};
+  const vars = data.function.variables || {};
+  const objectVariables = data.function.objectVariables || {};
+  const objectsData = data.function.objects || {};
+  const objectReturn = data.function.returnValue || {};
   return (
     <>
       <div className={`node_base ${data.active ? "active_node" : ""}`}>

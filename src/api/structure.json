@@ -1,446 +1,68 @@
 {
-  "error": null,
-  "response":{
-    "principal_Functions": [
-      {
-        "name": "sum",
-        "params": 2,
-        "isExport": true
-      },
-      {
-        "name": "sum6",
-        "params": 0,
-        "isExport": false
-      },
-      {
-        "name": "sum7",
-        "params": 1,
-        "isExport": false
-      },
-      {
-        "name": "sum8",
-        "params": 20,
-        "isExport": false
-      },
-      {
-        "name": "sum9",
-        "params": 30,
-        "isExport": true
-      },
-      {
-        "name": "sum10",
-        "params": 40,
-        "isExport": false
-      },
-      {
-        "name": "sum11",
-        "params": 50,
-        "isExport": true
-      }
-    ],
+  "error": false,
+  "response": {
     "steps": [
       {
-        "current_line": 1,
-        "next_line": 8,
-        "output": "result of io:writ11",
-        "objects": {
-          "id1": ["values", "values"],
-          "id2": {
-            "namee": "value",
-            "lastname": "medina",
-            "age": 20
-          }
-        },
+        "currentLine": 3,
+        "output": "Paso inicial",
         "functions": [
           {
-            "name": "sum",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum2222"
-            },
-            "return": "my atom"
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": "Paso inicial"
           }
         ]
       },
       {
-        "current_line": 4,
-        "next_line": 8,
-        "output": "result of io:writ222",
-        "objects": {
-          "id1": ["values", "values"],
-          "id2": {
-            "namee": "value",
-            "lastname": "medina",
-            "age": 20
-          }
-        },
+        "currentLine": 4,
         "functions": [
           {
-            "name": "sum",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
           },
           {
-            "name": "sum2",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "dic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
+            "name": "sum",
+            "params": { "A": "1.0", "B": "2.0" },
+            "variables": {},
+            "objectVariales": {}
           }
         ]
       },
       {
-        "current_line": 6,
-        "next_line": 8,
-        "output": "result of io:writ333",
-        "objects": {
-          "id1": ["values", "values"],
-          "id2": {
-            "namee": "value",
-            "lastname": "medina",
-            "age": 20
-          }
-        },
+        "currentLine": 4,
         "functions": [
           {
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {}
+          },
+          {
             "name": "sum",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum2",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "dic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum3",
-            "params": { "p1": "value", "p2": "value", "p3": "valu3" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2",
-              "mydic": "id2",
-              "mydic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
+            "params": { "A": "1.0", "B": "2.0" },
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": "3.0"
           }
         ]
       },
       {
-        "current_line": 7,
-        "next_line": 8,
-        "output": "result of io:writ44",
-        "objects": {
-          "id1": ["values", "values"],
-          "id2": {
-            "namee": "value",
-            "lastname": "medina",
-            "age": 20
-          }
-        },
+        "currentLine": 8,
+        "output": "3.0",
         "functions": [
           {
-            "name": "sum",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum2",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "dic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum3",
-            "params": { "p1": "value", "p2": "value", "p3": "valu3" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2",
-              "mydic": "id2",
-              "mydic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum4",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          }
-        ]
-      },
-      {
-        "current_line": 8,
-        "next_line": 8,
-        "output": "result of io:writ55",
-        "objects": {
-          "id1": ["values", "values"],
-          "id2": {
-            "namee": "value",
-            "lastname": "medina",
-            "age": 20
-          }
-        },
-        "functions": [
-          {
-            "name": "sum",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum2",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "dic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum3",
-            "params": { "p1": "value", "p2": "value", "p3": "valu3" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2",
-              "mydic": "id2",
-              "mydic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum4",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum5",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          }
-        ]
-      },
-      {
-        "current_line": 9,
-        "next_line": 8,
-        "output": "result of io:writ66",
-        "objects": {
-          "id1": ["values", "values"],
-          "id2": {
-            "namee": "value",
-            "lastname": "medina",
-            "age": 20
-          }
-        },
-        "functions": [
-          {
-            "name": "sum",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum2",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "dic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum3",
-            "params": { "p1": "value", "p2": "value", "p3": "valu3" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1",
-              "list2": "id2",
-              "mydic": "id2",
-              "mydic2": "id2"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum4",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum5",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
-          },
-          {
-            "name": "sum66",
-            "params": { "p1": "value" },
-            "variables": {
-              "Name": "value"
-            },
-            "objectVariables": {
-              "list": "id1"
-            },
-            "functionVariables": {
-              "f1": "sum"
-            },
-            "return": null
+            "name": "start",
+            "params": {},
+            "variables": {},
+            "objectVariales": {},
+            "returnValue": "null"
           }
         ]
       }
     ]
   }
-
 }

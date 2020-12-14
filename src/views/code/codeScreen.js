@@ -22,7 +22,8 @@ const CodeScreen = (props) => {
     // const s = ;
     notification.open({
       message: "Hay un error con tu codigo",
-      description: `Linea ${error.line} Columna ${error.column}. ${error.message}`,
+      // description: `Linea ${error.line} Columna ${error.column}. ${error.message}`,
+      description: error,
       icon: <ExclamationCircleOutlined  style={{ color: "#108ee9" }} />,
       // placement,
     });
@@ -44,7 +45,8 @@ const CodeScreen = (props) => {
 
   const makeRequest = async (codeData) => {
     const res = await getSteps(codeData);
-    if (res.error === null) {
+    // console.log(res)
+    if (res.error === false) {
       setResponse(res.response);
       setCode(inputValue.split("\n"));
       setIsLoading(false);
